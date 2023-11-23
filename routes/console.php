@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+Artisan::command('log', function () {
+    Log::info('this is a test');
+})->purpose('Writes a log');
+
+Artisan::command('sendEmail', function () {
+    Mail::send(new MailExample());
+})->purpose('Sends an Email');
